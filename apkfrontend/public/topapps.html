@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Apps</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="16x16" />
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <!--Bootstrap CSS 5 CDN-link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="assets/css/topapps.css" />
+
+  <!-- axios link -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.24.0/dist/axios.min.js"></script>
+
+  <!--4-->
+  <!-- <link rel="stylesheet" href="  https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" /> -->
+
+</head>
+
+<body>
+
+  <!-- ======= Header Start ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand order-2 order-lg-0 logo_mobile_look" href="home.html"><img src="assets/images/logo.png"
+          class="nav_logo" height="60px" /></a>
+      <div class="search_icon order-3 d-lg-none me-2">
+        <a href="#">
+          <i class="fas fa-search"></i>
+        </a>
+      </div>
+      <button class="btn  d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="mob-navbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-3 ms-auto">
+          <li class="nav-item d-flex align-items-center">
+            <img src="assets/images/nav_app_icon.png" height="25px" width="25x" />
+            <a class="nav-link" href="apps.html">Apps</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/nav_game_icon.png" height="25px" width="25x" />
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li class="nav-item dropdown d-flex align-items-center">
+            <img src="assets/images/nav_topic_icon.png" height="25px" width="25x" />
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Topics</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="discover.html">Discover App</a></li>
+              <li><a class="dropdown-item" href="editorchoice.html">Editor's Choice </a></li>
+              <li><a class="dropdown-item" href="preregister.html">Pre-register</a></li>
+              <li>
+
+            </ul>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/latest.png" height="25px" width="25px" />
+            <a class="nav-link" href="#">Latest</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/live.png" height="25px" width="25x" />
+            <a class="nav-link" href="#">Qubstore Live</a>
+          </li>
+
+          <form class="d-flex  align-items-center ">
+            <li class="nav-item dropdown d-flex align-items-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownforsearch" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-search"></i></a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownforsearch">
+                <li>
+                  <input class="form-control  searchbar_look" type="search" placeholder="Search" aria-label="Search">
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown d-flex align-items-center ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"><i class="fa fa-language" aria-hidden="true"></i></a>
+              <ul class="dropdown-menu p-3" aria-labelledby="navbarDropdown">
+                <li>
+                  <div id="google_element"></div>
+                </li>
+
+              </ul>
+            </li>
+
+            <a href="profilesetting.html"><img id="profile-picture-2" src="assets/images/no_login_v1.png" height="30px"
+                width="30px" /></a>
+          </form>
+        </ul>
+
+
+
+      </div>
+      <!--offcanvas for sidebar Start-->
+      <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close text-reset me-5" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+
+        <ul class="navbar-nav navbar-nav_mobile ">
+          <li class="nav-item d-flex align-items-center ms-3 ">
+            <a><img src="assets/images/no_login_v1.png" height="30px" width="30px" /><span
+                style="font-size: 14px; font-family: Arial, Helvetica, sans-serif;"> SIGN IN</span></a>
+          </li>
+
+          <li class="nav-item d-flex align-items-center ">
+            <img src="assets/images/home.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link pt-3" href="home.html">Home</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/nav_app_icon.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="apps.html">Apps</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/nav_game_icon.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/android-auto.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="rhapsodyapks.html">Rhapsody Apk</a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/discovery.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="discover.html">Discover App</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/star.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="editorchoice.html">Editor's Choice</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/clock.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="preregister.html">Pre-Register</a>
+          </li>
+          <li class="nav-item  d-flex align-items-center">
+            <img src="assets/images/label.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" href="gameonsale.html">Game on Sale</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <img src="assets/images/share.png" class="mx-3" height="25px" width="25px" />
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#shareModal" id="shareBtn"
+              data-bs-placement="top" title="Click Me!">Share</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+    </div>
+    <!--offcanvas for sidebar END-->
+  </nav>
+  <!-- =======End Header ======= -->
+
+  <!-- ======= Main Start ======= -->
+
+  <div class="container-fluid custom_main_container my-4">
+    <!-- ** Top Apps Strat ** -->
+    <!-- Mobile site view for apps START-->
+    <div id="topapps" class="container-fluid text-center  hid_mobile_Games_cat">
+      <div class="d-flex justify-content-between pb-2">
+        <a href=" #" class="bar_for_major"> <img src="assets/images/topapps.png" height="25px" width="25px" />
+          Top Apps</a>
+        <a href="#" class="see_more_link">See More <i class="far fa-angle-double-right"></i></a>
+      </div>
+      <div class="container">
+        <div class="row" id="mobile-apks">
+
+          <div class="d-block w-100"
+            style="padding-left: 8%; padding-top: 8rem; display: flex; justify-content: center;">
+            <div class="spinner-border text-primary" style="height: 6rem; width: 6rem;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- rhapsody pagigation-->
+        <div class="col-12 pagination_set w-25 mx-auto pt-4" id="mobile-pagination" style="display: none;">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-md">
+              <!-- <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li> -->
+              <div style="display: flex; justify-content: start;" id="mobile-paginatoin-btns">
+
+              </div>
+
+              <!-- <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li> -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile site view for apps END-->
+
+    <!-- Desktop site view START-->
+    <div id="topapps" class="container hid_desk_Games_cat">
+      <div class="container">
+        <div class="row d-flex text-start">
+          <div class="col-12">
+            <a href=" #" class="bar_for_major"> <img src="assets/images/android-auto.png" height="35px" width="35px" />
+              Top Apps</a>
+            <i class="far fa-angle-double-right"></i>
+          </div>
+        </div>
+        <div class="row" id="desktop-apks">
+
+          <div class="d-block w-100"
+            style="padding-left: 43%; padding-top: 12rem; padding-bottom: 12rem; display: flex; justify-content: center;">
+            <div class="spinner-border text-primary" style="height: 12rem; width: 12rem;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- rhapsody pagigation-->
+      <div class="col-12 pagination_set w-25 " id="pagination" style="display: none;">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-md">
+            <!-- <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li> -->
+
+            <div style="display: flex; justify-content: start;" id="paginatoin-btns">
+
+            </div>
+
+            <!-- <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+      <!-- Desktop site view END -->
+    </div>
+    <!-- ** Game End ** -->
+
+
+  </div>
+  <!-- ======= Main Start END======= -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <a href="index.html">
+            <img src="assets/images/logo.png" style="height: 3.5rem" alt="Qube Store" />
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Qube Store</h4>
+          <ul>
+            <li>
+              <p>We believe in Simple, Creative & Flexible Design Standards.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Contact Us </h4>
+          <ul>
+            <li>
+              <a href="#"><span>Call:</span> (+23)48035101360</a>
+            </li>
+            <li class="d-grid gap-2">
+              <a href="#"><span>Email:</span>info@qubstore.com</a>
+              <a href="#"></a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us on</h4>
+          <ul>
+            <li>
+              <i class="bx bxl-facebook"></i>
+              <a href="https://facebook.com/qubstore">Facebook</a>
+            </li>
+            <li>
+              <i class="bx bxl-twitter"></i>
+              <a href="https://twitter.com/qubstore">Twitter</a>
+            </li>
+            <li>
+              <i class="bx bxl-instagram"></i>
+              <a href="https://www.linkedin.com/qubstore">Linkedin</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Subscription to Our Newsletter</h4>
+          <ul>
+            <li class="d-grid gap-2">
+              <a href="#"><input class="form-control  searchbar_look" type="text" placeholder="Email"
+                  aria-label="Search"></a>
+
+              <button class="btn Subscription_btn w-50">SUBSCRIBE</button>
+            </li>
+            <li>
+
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid footer-bottom clearfix">
+      <div class="copyright text-center">
+        &copy; Copyright <strong><span>QubStore</span></strong>.All Rights Reserved | DMCA Disclaimer |
+        Privacy Policy |
+        Term of Use
+      </div>
+
+
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+
+
+  <!--Share btn fixes on site stert-->
+  <div class="share-btnn" data-bs-toggle="modal" data-bs-target="#shareModal" id="shareBtn" data-bs-placement="top"
+    title="Click Me!">
+    <img src="assets/images/sharing.png" style="height:40px; width:40px">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content col-12">
+        <div class="modal-header">
+          <h5 class="modal-title">Share</h5>
+          <button type="button" class="btn-close bg-light" style="border-radius: 25px;" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="icon-container1 d-flex">
+            <div class="smd"> <i class=" img-thumbnail fab fa-twitter fa-2x"
+                style="color:#4c6ef5;background-color: aliceblue" id="twitter"></i>
+              <p>Twitter</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-facebook fa-2x"
+                style="color: #3b5998;background-color: #eceff5;" id="facebook"></i>
+              <p>Facebook</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-reddit-alien fa-2x"
+                style="color: #FF5700;background-color: #fdd9ce;" id="redidit"></i>
+              <p>Reddit</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-discord fa-2x "
+                style="color: #738ADB;background-color: #d8d8d8;" id="discord"></i>
+              <p>Discord</p>
+            </div>
+          </div>
+          <div class="icon-container2 d-flex">
+            <div class="smd"> <i class="img-thumbnail fab fa-whatsapp fa-2x"
+                style="color: #25D366;background-color: #cef5dc;" id="whatsapp"></i>
+              <p>Whatsapp</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-facebook-messenger fa-2x"
+                style="color: #3b5998;background-color: #eceff5;" id="messenger"></i>
+              <p>Messenger</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-telegram fa-2x"
+                style="color: #4c6ef5;background-color: aliceblue" id="telegram"></i>
+              <p>Telegram</p>
+            </div>
+            <div class="smd"> <i class="img-thumbnail fab fa-weixin fa-2x"
+                style="color: #7bb32e;background-color: #daf1bc;" id="wechat"></i>
+              <p>WeChat</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <label style="font-weight: 600">Page Link <span class="message"></span>
+          </label><br />
+          <div class="d-flex">
+            <input class="form-control ur w-100" type="url" placeholder="Paste Link"
+              id="myInput" aria-describedby="inputGroup-sizing-default" style="height: 40px;">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Share btn fixes on site END-->
+
+  <!--Bootstrap 5 js-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!--Google translate-->
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+  <!--Custom js-->
+  <script src="assets/js/shared-main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/topapps.js"></script>
+  <!--js for share-mode from B4-->
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</htm

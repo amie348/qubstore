@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap");
+
+:root {
+  --headings-color: #023cc5;
+  --onhover-color: #2e3192;
+  --footer-bg-color: #00aeef;
+  --major-font-font: Arial, Helvetica, sans-serif;
+}
+
+/*--------------------------------------------------------------
+#SubscriptionModal
+--------------------------------------------------------------*/
+#SubscriptionModal .modal-title {
+  font-weight: 700;
+}
+#SubscriptionModal .modal-content {
+  background: rgba(1, 1, 1, 0.5);
+  border-radius: 3px;
+}
+#SubscriptionModal .modal-body {
+  display: flex;
+}
+#SubscriptionModal .modal-body .card {
+  background-color: var(--footer-bg-color);
+  width: 22rem;
+  box-shadow: 5px 5px 10px var(--footer-bg-color);
+  font-family: var(--major-font-font);
+  color: #ffffff;
+  font-size: 18px;
+}
+
+#SubscriptionModal .card-body .card-title {
+  font-weight: 600;
+  font-size: 25px;
+}
+#SubscriptionModal .card .card-body .next_to_card_title {
+  padding-top: 5px;
+}
+#SubscriptionModal .card-text {
+  padding-top: 25px;
+}
+#SubscriptionModal .num_of_downloads_in_sub {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #000000;
+  display: grid;
+}
+#SubscriptionModal .num_of_downloads_in_sub span {
+  font-size: 11px;
+  color: var(--onhover-color);
+}
+
+#SubscriptionModal .Sub_amount {
+  margin-top: 60px;
+  background-color: gold;
+  border-radius: 25px;
+  padding: 13px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  #SubscriptionModal .modal-body .card {
+    width: 18rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #SubscriptionModal .modal-body .card {
+    background-color: var(--footer-bg-color);
+    width: 13rem;
+  }
+  #SubscriptionModal .card-body .card-title {
+    font-size: 20px;
+  }
+  #SubscriptionModal .card .card-body .next_to_card_title {
+    padding-top: 5px;
+  }
+  #SubscriptionModal .card-text {
+    padding-top: 12px;
+    font-size: 15px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub {
+    margin-top: 40px;
+    font-size: 30px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub span {
+    font-size: 10px;
+  }
+
+  #SubscriptionModal .Sub_amount {
+    margin-top: 40px;
+    padding: 6px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #SubscriptionModal .modal-body .card {
+    background-color: var(--footer-bg-color);
+    width: 10rem;
+  }
+  #SubscriptionModal .card-body .card-title {
+    font-size: 15px;
+  }
+  #SubscriptionModal .card .card-body .next_to_card_title {
+    padding-top: 20px;
+  }
+  #SubscriptionModal .card-text {
+    padding-top: 9px;
+    font-size: 13px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub {
+    margin-top: 30px;
+    font-size: 25px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub span {
+    font-size: 9px;
+  }
+
+  #SubscriptionModal .Sub_amount {
+    margin-top: 30px;
+    padding: 4px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #SubscriptionModal .modal-body {
+    display: grid;
+  }
+  #SubscriptionModal .modal-body .card {
+    background-color: var(--footer-bg-color);
+    width: 20rem;
+    margin-bottom: 10px;
+  }
+  #SubscriptionModal .card-body .card-title {
+    font-size: 15px;
+  }
+  #SubscriptionModal .card .card-body .next_to_card_title {
+    padding-top: 0px;
+  }
+  #SubscriptionModal .card-text {
+    font-size: 13px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub span {
+    font-size: 9px;
+  }
+
+  #SubscriptionModal .Sub_amount {
+    margin-top: 10px;
+    padding: 4px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #SubscriptionModal .modal-body {
+    display: grid;
+  }
+  #SubscriptionModal .modal-body .card {
+    background-color: var(--footer-bg-color);
+    width: 15rem;
+    margin-bottom: 10px;
+  }
+  #SubscriptionModal .card-body .card-title {
+    font-size: 15px;
+  }
+  #SubscriptionModal .card .card-body .next_to_card_title {
+    padding-top: 0px;
+  }
+  #SubscriptionModal .card-text {
+    font-size: 13px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  #SubscriptionModal .num_of_downloads_in_sub span {
+    font-size: 9px;
+  }
+
+  #SubscriptionModal .Sub_amount {
+    margin-top: 10px;
+    padding: 4px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
